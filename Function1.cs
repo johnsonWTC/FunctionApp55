@@ -17,8 +17,6 @@ namespace FunctionApp55
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-            string name = req.Query["name"];
             return new OkObjectResult("");
         }
     }
