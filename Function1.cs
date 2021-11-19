@@ -20,8 +20,6 @@ namespace FunctionApp55
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
-
-           
             return new OkObjectResult("");
         }
     }
