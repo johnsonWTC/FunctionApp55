@@ -21,9 +21,7 @@ namespace FunctionApp55
 
             string name = req.Query["name"];
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
- 
+           
             return new OkObjectResult("");
         }
     }
