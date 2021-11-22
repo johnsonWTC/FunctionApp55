@@ -17,7 +17,7 @@ namespace FunctionApp55
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{name}")] HttpRequest req,string name,
             ILogger log)
         {
-            return new OkObjectResult("Hey");
+            return new OkObjectResult(name);
         }
     }
 }
