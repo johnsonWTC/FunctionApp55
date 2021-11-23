@@ -14,10 +14,10 @@ namespace FunctionApp55
     {
         [FunctionName("Function1")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{name}")] HttpRequest req,string name,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "name")] HttpRequest req,string name
             ILogger log)
         {
-            return new OkObjectResult(name);
+            return new OkObjectResult("Hey");
         }
     }
 }
