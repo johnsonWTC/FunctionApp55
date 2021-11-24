@@ -18,8 +18,13 @@ namespace FunctionApp55
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
+
             string name = req.Query["name"];
-            return new OkObjectResult("");
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
+ 
+            return new OkObjectResult();
         }
     }
 }
