@@ -14,10 +14,12 @@ namespace FunctionApp55
     {
         [FunctionName("Function1")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "name")] HttpRequest req,string name
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            return new OkObjectResult("Hey");
+            log.LogInformation("C# HTTP trigger function processed a request.");
+            string name = req.Query["name"];
+            return new OkObjectResult("");
         }
     }
 }
