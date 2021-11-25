@@ -17,12 +17,8 @@ namespace FunctionApp55
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{name}")] HttpRequest req,string name,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-          
-
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            var data = JsonConvert.DeserializeObject(requestBody);
  
             return new OkObjectResult(name);
         }
